@@ -1,6 +1,6 @@
 class Practice {
-  double start;
-  double duration;
+  int start;
+  int duration;
   int status;
   String comment;
 }

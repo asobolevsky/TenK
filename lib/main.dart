@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tenk/dialogs/craft_dialog.dart';
 import 'package:tenk/models/craft.dart';
+import 'package:tenk/widgets/craft_card.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -34,10 +35,7 @@ class _CraftsListState extends State<CraftsList> {
           padding: EdgeInsets.all(8),
           itemCount: _crafts.length,
           itemBuilder: (BuildContext context, int index) {
-            return Container(
-              height: 50,
-              child: Text('${_crafts[index].name}'),
-            );
+            return CraftCard(craft: _crafts[index]);
           }
         ),
       ),
