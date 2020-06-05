@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tenk/dialogs/craft_dialog.dart';
 import 'package:tenk/models/craft.dart';
+import 'package:tenk/screens/craft_screen.dart';
 import 'package:tenk/widgets/craft_card.dart';
 
 void main() {
@@ -35,7 +36,11 @@ class _CraftsListState extends State<CraftsList> {
           padding: EdgeInsets.all(8),
           itemCount: _crafts.length,
           itemBuilder: (BuildContext context, int index) {
-            return CraftCard(craft: _crafts[index]);
+            Craft craft = _crafts[index];
+            return GestureDetector(
+              child: CraftCard(craft: craft),
+              onTap: () =>  Navigator.push(context, MaterialPageRoute(builder: (context) => CraftScreen(craft: craft))),
+            );
           }
         ),
       ),

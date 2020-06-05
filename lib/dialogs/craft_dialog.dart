@@ -25,27 +25,30 @@ class _CraftFormState extends State<CraftForm> {
     return AlertDialog(
       title: Text('Enter craft name'),
       content: Form(
-          key: _formKey,
-          child: Row(
-            children: <Widget>[
-              Expanded(
-                child: TextFormField(
-                  autofocus: true,
-                  validator: (value) {
-                    if (value.isEmpty) {
-                      return 'Craft name should not be empty';
-                    }
-                    return null;
-                  },
-                  decoration: InputDecoration(
-                      labelText: 'Craft name', hintText: 'eg. football'),
-                  onChanged: (value) {
-                    craftName = value;
-                  },
+        key: _formKey,
+        child: Row(
+          children: <Widget>[
+            Expanded(
+              child: TextFormField(
+                autofocus: true,
+                validator: (value) {
+                  if (value.isEmpty) {
+                    return 'Craft name should not be empty';
+                  }
+                  return null;
+                },
+                decoration: InputDecoration(
+                  labelText: 'Comment', 
+                  hintText: 'eg. football'
                 ),
-              )
-            ],
-          )),
+                onChanged: (value) {
+                  craftName = value;
+                },
+              ),
+            )
+          ],
+        )
+      ),
       actions: <Widget>[
         FlatButton(
           child: Text(
